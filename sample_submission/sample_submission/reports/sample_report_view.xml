@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    sample submission report wizard view form-->
+    <record id="sample_submission_report_view_form" model="ir.ui.view">
+        <field name="name">sample.submission.report.wizard.view.form</field>
+        <field name="model">sample.submission.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="create_pdf" string="PRINT PDF"
+                                type="object" class="oe_highlight"/>
+                        <button name="print_xlsx" string="PRINT XLSX"
+                                type="object" class="oe_highlight"/>
+                        <button name="canceled_order" string="Cancel"
+                                special="cancel" class="oe_highlight"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--    sample submission report action-->
+    <record id="sample_submission_report_action" model="ir.actions.act_window">
+        <field name="name">Sample Submission Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sample.submission.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sample_submission_report_view_form"/>
+        <field name="target">new</field>
+    </record>
+     <!--    Menu for sample submission report -->
+    <menuitem id="sample_submission_reports_menu" action="sample_submission_report_action"
+              name="Sample Submission Report" parent="menu_root_sample_submission"
+              sequence="3"/>
+</odoo>

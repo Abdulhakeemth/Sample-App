@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Confirmation Popup View -->
+        <record id="confirmation_popup_form_view" model="ir.ui.view">
+            <field name="name">confirmation.popup.form</field>
+            <field name="model">custom.invoice.confirmation.popup</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="message" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button string="Ok" class="btn-primary" name="confirm_invoice" type="object"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

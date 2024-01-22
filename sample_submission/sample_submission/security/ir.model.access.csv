@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_sample_submission,sample.submission,model_sample_submission,base.group_user,1,1,1,1
+access_material_required_line,material.required.line,model_material_required_line,base.group_user,1,1,1,1
+access_material_required_wizard,material.required.wizard,model_material_required_wizard,base.group_user,1,1,1,1
+access_sample_submission_report,sample.submission.report,model_sample_submission_report,sample_submission_administrator,1,1,1,1
+access_custom_invoice_confirmation_popup,custom.invoice.confirmation.popup,model_custom_invoice_confirmation_popup,base.group_user,1,1,1,1

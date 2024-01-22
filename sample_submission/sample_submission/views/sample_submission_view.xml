@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    sample submission form view-->
+    <record id="sample_submission_view_form" model="ir.ui.view">
+        <field name="name">sample.submission.view.form</field>
+        <field name="model">sample.submission</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"
+                           options="{'clickable': '1'}"/>
+                    <button name="sample_submission_invoice" string="Confirm"
+                            type="object" class="oe_highlight" states="completed"/>
+                    <button name="add_materials" string="ADD MATERIALS"
+                            type="object" class="oe_highlight" states="pending,doing"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="e.g. Sample..."/>
+                            <field name="partner_id"/>
+                            <field name="price"/>
+                            <field name="discount" widget="percentage"/>
+                            <field name="vat" widget="percentage"/>
+                        </group>
+                        <group>
+                            <field name="date_of_submission"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Material Required">
+                            <field name="material_required_ids">
+                                <tree create="0">
+                                    <field name="sl_no"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="remarks"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--    Sample Submission tree view-->
+    <record id="sample_submission_view_tree" model="ir.ui.view">
+        <field name="name">sample.submission.view.tree</field>
+        <field name="model">sample.submission</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="date_of_submission"/>
+                <field name="price" sum="Total"/>
+                <field name="discount"/>
+                <field name="vat"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <!--    Sample Submission search view-->
+    <record id="sample_submission_view_search" model="ir.ui.view">
+        <field name="name">sample.submission.view.search</field>
+        <field name="model">sample.submission</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+            </search>
+        </field>
+    </record>
+    <!--    Sample Submission view action -->
+    <record id="action_sample_submission" model="ir.actions.act_window">
+        <field name="name">Sample Submission</field>
+        <field name="res_model">sample.submission</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+</odoo>

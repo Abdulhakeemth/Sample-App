@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_root_sample_submission" web_icon="sample_submission,static/description/icon.svg"
+              name="Sample Submission" action="action_sample_submission" sequence="2">
+    </menuitem>
+</odoo>

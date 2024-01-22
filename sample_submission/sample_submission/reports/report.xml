@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    PDF report action for travel management-->
+    <record id="action_report_sample_submission" model="ir.actions.report">
+        <field name="name">Sample Submission</field>
+        <field name="model">sample.submission</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sample_submission.report_sample_submission</field>
+        <field name="report_file">sample_submission.report_sample_submission</field>
+        <field name="binding_model_id" ref="model_sample_submission"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
